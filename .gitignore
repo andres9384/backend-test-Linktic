@@ -1,0 +1,15 @@
+# Java
+target/
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# SQLite
+*.db
+*.db-journal
+
+# OS
+.DS_Store
