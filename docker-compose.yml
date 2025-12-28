@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  product-service:
+    build: ./product-service
+    container_name: product-service
+    ports:
+      - "8081:8081"
+
+  inventory-service:
+    build: ./inventory-service
+    container_name: inventory-service
+    ports:
+      - "8080:8080"
+    depends_on:
+      - product-service

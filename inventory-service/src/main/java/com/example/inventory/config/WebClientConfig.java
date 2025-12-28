@@ -13,7 +13,7 @@ public class WebClientConfig {
     @Bean
     public WebClient productWebClient() {
         return WebClient.builder()
-                .baseUrl("http://localhost:8081")
+                .baseUrl("http://product-service:8081")
                 .defaultHeader("X-API-KEY", "inventory-service-key")
                 .build();
     }
