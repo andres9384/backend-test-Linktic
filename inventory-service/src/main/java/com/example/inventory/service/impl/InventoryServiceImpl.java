@@ -48,13 +48,10 @@ public class InventoryServiceImpl implements InventoryService {
         return mapToResponse(saved);
     }
 
-    @Transactional
     @Override
     public PurchaseResponseDto purchase(Long productId, Integer cantidad) {
 
         var product = productClient.getProductById(productId);
-
-        System.out.println(product);
 
         InventoryEntity inventory = inventoryRepository
                 .findByProductId(productId)
