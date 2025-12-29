@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "22fc7fb0-b216-4a89-885b-65ac7b1306dd",
+		"name": "Linkid",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17757440"
+	},
+	"item": [
+		{
+			"name": "CrearProducto",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{basic_auth_password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{basic_auth_user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"data\": {\r\n    \"type\":\"product\",\r\n    \"attributes\":{\r\n  \"nombre\": \"Mouse\",\r\n  \"precio\": 120.0,\r\n  \"descripcion\": \"Teclado mecánico\"\r\n    }\r\n\r\n}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{product_base_url}}/products",
+					"host": [
+						"{{product_base_url}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtenerProducto",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{basic_auth_password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{basic_auth_user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{product_base_url}}/products/2",
+					"host": [
+						"{{product_base_url}}"
+					],
+					"path": [
+						"products",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crearInventario",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{basic_auth_password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{basic_auth_user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"data\": {\r\n    \"type\": \"inventory\",\r\n    \"attributes\": {\r\n      \"productId\": 1,\r\n      \"cantidad\": 30\r\n    }\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{inventory_base_url}}/inventory",
+					"host": [
+						"{{inventory_base_url}}"
+					],
+					"path": [
+						"inventory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtenerInventario",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{basic_auth_password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{basic_auth_user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{inventory_base_url}}/inventory/1",
+					"host": [
+						"{{inventory_base_url}}"
+					],
+					"path": [
+						"inventory",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "comprarProducto",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{basic_auth_password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{basic_auth_user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"productId\": 1,\r\n  \"cantidad\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{inventory_base_url}}/inventory/purchase",
+					"host": [
+						"{{inventory_base_url}}"
+					],
+					"path": [
+						"inventory",
+						"purchase"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
