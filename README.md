@@ -2,7 +2,7 @@
 
 ## 📌 Descripción General
 
-Este proyecto implementa una solución basada en **dos microservicios independientes**: **Product Service** y **Inventory Service**, los cuales interactúan entre sí mediante **HTTP** siguiendo el estándar **JSON:API**.
+En este proyecto implementa una solución basada en **dos microservicios independientes**: **Product Service** y **Inventory Service**, los cuales interactúan entre sí mediante **HTTP** siguiendo el estándar **JSON:API**.
 
 La solución cumple con los requerimientos de la prueba técnica, incluyendo:
 
